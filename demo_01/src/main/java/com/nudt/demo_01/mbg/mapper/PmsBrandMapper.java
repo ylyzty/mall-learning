@@ -4,8 +4,30 @@ import com.nudt.demo_01.mbg.model.PmsBrand;
 import com.nudt.demo_01.mbg.model.PmsBrandExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.type.Alias;
 
+/**
+ * @Param: MyBatis提供的作为 Dao 层的注解，作用是用于参数传递，从而可以与SQL中的字段名相对应
+ */
 public interface PmsBrandMapper {
+
+    /**
+     * 手动实现 Mapper
+     */
+    PmsBrand selectPmsBrandById(Long id);
+
+    int deletePmsBrandById(Long id);
+
+    int insertPmsBrand(PmsBrand pmsBrand);
+
+    int updatePmsBrand(PmsBrand pmsBrand);
+
+    List<PmsBrand> selectAllPmsBrand();
+
+
+    /**
+     * mybatis-generator 逆向工程
+     */
     int countByExample(PmsBrandExample example);
 
     int deleteByExample(PmsBrandExample example);

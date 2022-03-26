@@ -17,7 +17,7 @@ public interface PmsBrandService {
 
     int deleteBrand(Long id);
 
-    PmsBrand getBrand(Long id);
+    PmsBrand getBrandById(Long id);
 
     //分页查询
     List<PmsBrand> listBrand(int pageNum, int pageSize);

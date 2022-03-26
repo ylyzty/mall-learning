@@ -105,7 +105,7 @@ public class PmsBrandController {
     @ResponseBody
     public CommonResult<PmsBrand> getBrand(@PathVariable("id") Long id) {
         CommonResult commonResult;
-        PmsBrand pmsBrand = demoService.getBrand(id);
+        PmsBrand pmsBrand = demoService.getBrandById(id);
         if (pmsBrand != null) {
             commonResult = CommonResult.success(pmsBrand);
             System.out.println("查询成功");

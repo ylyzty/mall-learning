@@ -1,7 +1,10 @@
 package com.nudt.demo_01.mbg.model;
 
+import org.apache.ibatis.type.Alias;
+
 import java.io.Serializable;
 
+@Alias("PmsBrand")
 public class PmsBrand implements Serializable {
     private Long id;
 
