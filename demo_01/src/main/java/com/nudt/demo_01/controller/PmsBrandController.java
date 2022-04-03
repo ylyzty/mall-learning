@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * @Controller: 注入Spring容器
- * @RequestMapping: 映射 URL 到 控制器类
+ * @RequestMapping: 映射 URL 到 Controller方法
  */
 @Controller
 @RequestMapping("/brand")
