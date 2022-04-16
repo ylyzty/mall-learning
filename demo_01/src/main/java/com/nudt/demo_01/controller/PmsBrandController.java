@@ -119,7 +119,7 @@ public class PmsBrandController {
     }
 
     /**
-     * @RequestParam: 将请求参数绑定到控制器的方法参数上
+     * @RequestParam:  
      * eg: 127.0.0.1:8080/brand/list?pageNum=1&pageSize=3
      * @param pageNum
      * @param pageSize
