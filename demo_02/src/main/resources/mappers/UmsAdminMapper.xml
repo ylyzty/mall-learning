@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nudt.demo_02.mapper.UmsAdminMapper">
+    <insert id="insertUmsAdmin">
+        insert into ums_admin
+            (id, username, password)
+        values
+            (#{id}, #{username}, #{password})
+    </insert>
+
+    <select id="selectUmsAdminByUsername" resultType="com.nudt.demo_02.entity.UmsAdmin">
+        select * from ums_admin where username = #{username}
+    </select>
+
+    <select id="selectAllPermissionById" resultType="com.nudt.demo_02.entity.UmsPermission">
+        select *
+        from ums_permission u
+        where u.pid = #{adminId}
+    </select>
+</mapper>

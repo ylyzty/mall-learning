@@ -24,6 +24,7 @@ mybatis:
   mapper-locations:
     - classpath:mappers/*.xml
     - classpath*:com/**/mappers/*.xml
+  type-aliases-package: com.nudt.demo_02.entity
 
 # 自定义 Redis
 redis:
@@ -32,6 +33,13 @@ redis:
       authCode: "portal:authCode:"
     expire:
       authCode: 120    # 验证码过期时间
+
+# 自定义 jwt key
+jwt:
+  tokenHeader: Authorization    # JWT存储的请求头
+  secret: mySecret      # JWT加密使用的密钥
+  expiration: 604800    # JWT的超期时间(60*60*24)
+  tokenHead: Bearer     # JWT载荷中拿到开头
 
 logging:
   file:

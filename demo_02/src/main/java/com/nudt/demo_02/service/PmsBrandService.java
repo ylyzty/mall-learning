@@ -15,7 +15,7 @@ public interface PmsBrandService {
 
     int updateBrand(Long id, PmsBrand pmsBrand);
 
-    PmsBrand getBrand(Long id);
+    PmsBrand getBrandById(Long id);
 
     List<PmsBrand> getAllPmsBrand();
 

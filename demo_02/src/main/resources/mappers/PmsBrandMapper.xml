@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nudt.demo_02.mapper.PmsBrandMapper">
+
+    <resultMap id="baseResult" type="PmsBrand">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="firstLetter" column="first_letter" />
+        <result property="sort" column="sort" />
+        <result property="factoryStatus" column="factory_status" />
+        <result property="showStatus" column="show_status" />
+        <result property="productCount" column="product_count" />
+        <result property="productCommentCount" column="product_comment_count" />
+        <result property="logo" column="logo" />
+        <result property="bigPic" column="big_pic" />
+        <result property="brandStory" column="brand_story" />
+    </resultMap>
+
+    <select id="selectPmsBrandById" resultMap="baseResult">
+        select * from pms_brand where id = #{id}
+    </select>
+    
+    <select id="selectAllPmsBrand" resultMap="baseResult">
+        select * from pms_brand
+    </select>
+
+    <insert id="insertPmsBrand">
+        insert into pms_brand
+            <!--  对应column name  -->
+            (id, name, first_letter, sort, factory_status, show_status, product_count,
+             product_comment_count, logo, big_pic, brand_story)
+        values
+            <!--  对应field name  -->
+            (#{id}, #{name}, #{firstLetter}, #{sort}, #{factoryStatus}, #{showStatus}, #{productCount},
+             #{productCommentCount}, #{logo}, #{bigPic}, #{brandStory})
+    </insert>
+
+    <update id="updatePmsBrand">
+        update pms_brand set
+            name = #{name},
+            first_letter = #{firstLetter},
+            sort = #{sort},
+            factory_status = #{factoryStatus},
+            show_status = #{showStatus},
+            product_count = #{productCount},
+            product_comment_count = #{productCommentCount},
+            logo = #{logo},
+            big_pic = #{bigPic},
+            brand_story = #{brandStory}
+        where id = #{id}
+    </update>
+
+    <delete id="deletePmsBrandById">
+        delete from pms_brand where id = #{id}
+    </delete>
+</mapper>
